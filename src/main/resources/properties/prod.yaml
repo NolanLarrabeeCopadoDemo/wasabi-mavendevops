@@ -1,0 +1,14 @@
+api:
+  id: "1234"
+
+http:
+  sf:
+    clientId: "fd02a9ab84d6d8c3605f153b91782"
+    clientSecret: "![i/5zg+k0rp+g5DWpHh2QpQzKWqPWlDmP6PxA8E5Ir+y4DhGl4jj9qDvdUOFTssUH]"
+  proc:
+    clientId: "b4035748fb40d1a2278bec0eb64426"
+    clientSecret: "![nZRoQ57CmZVQL9SlEeX/TS2i5xysFyZTLCuz0z09NUB5sTNd1Ta2AWh6/zGoMzjH]"
+
+amq:
+  clientId: "b39499fb5df842627d437c2dcec104"
+  clientSecret: "![1m75wKgfvNNQpRC4nh2QYNJ1nCcvdqZ7BB7Fh6H/1Mlu/zMjIKlj9EjQI+B2OV1l]"

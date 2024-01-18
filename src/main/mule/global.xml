@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+    xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" 
+    xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
+    xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+    xmlns:http="http://www.mulesoft.org/schema/mule/http" 
+    xmlns:anypoint-mq="http://www.mulesoft.org/schema/mule/anypoint-mq" 
+    xmlns="http://www.mulesoft.org/schema/mule/core" 
+    xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/anypoint-mq http://www.mulesoft.org/schema/mule/anypoint-mq/current/mule-anypoint-mq.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+    
+    <import file="commons-json-logging.xml" doc:name="Import commons-json-logging.xml" doc:id="dfeb1afb-6b09-4e45-941f-9e1e8902e9ff" />
+    <import file="commons-properties.xml" doc:name="Import commons-properties.xml" doc:id="fe7e8807-6cd3-46c7-9895-a208a90c797d" />
+    <import file="commons-configuration.xml" doc:name="Import commons-configuration.xml" doc:id="545a5e56-3383-4706-a0da-3b3b8d9d8f4a" />
+    <import file="commons-error-handling.xml" doc:name="Import commons-error-handling.xml" doc:id="9bb9b870-46b6-4058-9d1f-4a4a9d8eabb0" />
+    <import file="commons-http-apikit-autodiscovery.xml" doc:name="Import common-http-apikit-autodiscovery.xml" doc:id="8f4a8d9e-6f43-4e6f-8063-2c0249a3c23f" />
+    <import file="commons-http-apikit.xml" doc:name="Import commons-http-apikit.xml" doc:id="7596bdf6-5600-4d3d-91be-3c4c7ce5a4b1" />
+    <import file="commons-http-listener-config.xml" doc:name="Import commons-http-listener-config.xml" doc:id="4903489d-5276-4aa6-ba05-e75c12e54b05" />
+    <import file="commons-response-handling.xml" doc:name="Import common-response-handling.xml" doc:id="4fc3cffa-4bd3-45fa-aa70-a387143dfd98" />
+    <import file="commons-anypointmq-config.xml" doc:name="Import commons-anypointmq-config.xml" doc:id="c43b87d2-c812-4b94-bf69-6d2da67dcb74" />
+    
+
+    
+	<http:request-config
+		name="HTTP_Request_configuration"
+		doc:name="HTTP Request configuration"
+		doc:id="436eb3b1-d784-454f-9a90-40e81877c305"
+		responseTimeout="${http.sf.responseTimeout}">
+		<http:request-connection
+			protocol="${http.sf.protocol}"
+			connectionIdleTimeout="${http.sf.connectionTimeout}" />
+        <http:default-headers>
+            <http:default-header key="client_id" value="${http.sf.clientId}" />
+            <http:default-header key="client_secret" value="${secure::http.sf.clientSecret}" />
+        </http:default-headers>
+	</http:request-config>
+    
+    <http:request-config
+        name="HTTP_Proc_Request_configuration"
+        doc:name="HTTP Proc Request configuration"
+        doc:id="e77af460-d8f0-4294-86c8-9668ac3d479f"
+        responseTimeout="${http.proc.responseTimeout}">
+        <http:request-connection
+            protocol="${http.proc.protocol}"
+            connectionIdleTimeout="${http.proc.connectionTimeout}" />
+        <http:default-headers>
+            <http:default-header key="client_id" value="${http.proc.clientId}" />
+            <http:default-header key="client_secret" value="${secure::http.proc.clientSecret}" />
+        </http:default-headers>
+    </http:request-config>
+
+</mule>

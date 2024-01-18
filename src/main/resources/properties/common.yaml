@@ -1,0 +1,47 @@
+api:
+  environment: "${mule.env}"
+  domain: "us-e1.cloudhub.io"
+
+app:
+  layer: "Experience"
+
+log:
+  level: "INFO"
+
+apikit:
+  api: "api.raml"
+
+http:
+  listener:
+    host: "0.0.0.0"
+    port: "8081"
+  sf:
+    appName: "sys-api-sf-accounts"
+    version: "v1"
+    host: "mule-worker-internal-${api.environment}-${http.sf.appName}-${http.sf.version}.${api.domain}"
+    port: "8091"
+    protocol: "HTTP"
+    responseTimeout: "60000"
+    connectionTimeout: "30000"
+    baseUrl: "http://${http.sf.host}:${http.sf.port}"
+    userPath: "${http.sf.baseUrl}/api/user"
+    userCommunityPath: "${http.sf.baseUrl}/api/accounts/storage"
+    storageDeletePath: "${http.sf.baseUrl}/api/accounts/storage/{strgAccountNum}"
+    storageUpdatePath: "${http.sf.baseUrl}/api/accounts/storage/{strgAccountNum}"
+  proc:
+    appName: "proc-api-accounts"
+    version: "v1"
+    host: "mule-worker-internal-${api.environment}-${http.proc.appName}-${http.proc.version}.${api.domain}"
+    port: "8091"
+    protocol: "HTTP"
+    responseTimeout: "60000"
+    connectionTimeout: "30000"
+    baseUrl: "http://${http.proc.host}:${http.proc.port}"
+    getCommunityUserPath: "${http.proc.baseUrl}/api/community-user"
+    createAccountPath: "${http.proc.baseUrl}/api/account"
+    success-status-code-validator:
+      values:
+        default: "200..401,404,409"
+
+amq:
+  invoiceUtilQ: "invoice-util-q"

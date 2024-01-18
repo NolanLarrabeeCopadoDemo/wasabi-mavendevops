@@ -1,0 +1,22 @@
+#%RAML 1.0
+title: exp-api-accounts
+version: v1
+protocols: [ HTTP ]
+traits:
+  client-id-enforcement:
+    headers:
+      client_id:
+        type: string
+        required: false
+      client_secret:
+        type: string
+        required: false
+/health-check:
+  is: [client-id-enforcement]
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+
+
