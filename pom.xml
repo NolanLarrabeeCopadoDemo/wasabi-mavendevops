@@ -117,9 +117,9 @@
 			<classifier>mule-plugin</classifier>
 		</dependency> -->
 		<dependency>
-  			<groupId>da1718f4-8707-4443-9feb-6d1d0e56ab9c</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>wasabi-commons</artifactId>
-			<version>1.0.0</version>
+			<version>${wasabi-commons.version}</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<!-- MUnit dependencies. -->
