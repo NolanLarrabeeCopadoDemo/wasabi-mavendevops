@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
+	<!-- <parent>
 		<groupId>da1718f4-8707-4443-9feb-6d1d0e56ab9c</groupId>
 		<artifactId>wasabi-parent-pom</artifactId>
 		<version>1.1.0-SNAPSHOT</version>
 		<relativePath>./app/wasabi-parent-pom/pom.xml</relativePath>
-	</parent>
+	</parent> -->
 
 	<groupId>da1718f4-8707-4443-9feb-6d1d0e56ab9c</groupId>
 	<artifactId>exp-api-accounts</artifactId>
