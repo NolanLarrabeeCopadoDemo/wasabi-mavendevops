@@ -104,12 +104,12 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<!-- Mule Custom Modules. -->
-		<dependency>
+<!--		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>json-logger</artifactId>
 			<version>${json-logger.version}</version>
 			<classifier>mule-plugin</classifier>
-		</dependency>
+		</dependency> -->
 <!-- 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>api-error-handler</artifactId>
