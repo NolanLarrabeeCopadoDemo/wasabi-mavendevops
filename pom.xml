@@ -110,12 +110,12 @@
 			<version>${json-logger.version}</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-<!-- 		<dependency>
+		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>api-error-handler</artifactId>
-			<version>${api-error-handler.version}</version>
+			<version>6.1.0</version>
 			<classifier>mule-plugin</classifier>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>wasabi-commons</artifactId>
