@@ -8,7 +8,6 @@
 		<relativePath>../pom.xml<relativePath/>
 	</parent> 
 
-	<groupId>da1718f4-8707-4443-9feb-6d1d0e56ab9c</groupId>
 	<artifactId>exp-api-accounts</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
