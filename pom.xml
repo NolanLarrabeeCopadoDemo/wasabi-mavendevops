@@ -22,18 +22,28 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>3.8.0</version>
+				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
-<!-- 					<sharedLibraries>
-						<sharedLibrary>
-							<groupId>pl.tkowalcz.tjahzi</groupId>
-							<artifactId>log4j2-appender-nodep</artifactId>
-						</sharedLibrary>
-					</sharedLibraries> -->
+                    <cloudHubDeployment>
+                      <uri>https://anypoint.mulesoft.com</uri>
+                      <muleVersion>${runtime_version}</muleVersion>
+                      <connectedAppClientId>${clientid}</connectedAppClientId>
+                      <connectedAppClientSecret>${clientsecret}</connectedAppClientSecret>
+                      <connectedAppGrantType>client_credentials</connectedAppGrantType>
+                      <applicationName>${appname}</applicationName>
+                      <environment>${environment}</environment>
+                      <workers>${workerCount}</workers>
+                      <workerType>${workerType}</workerType>
+                      <objectStoreV2>true</objectStoreV2>
+                    </cloudHubDeployment>
 				</configuration>
 			</plugin>
 			<plugin>
