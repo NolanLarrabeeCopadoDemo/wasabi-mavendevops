@@ -15,7 +15,7 @@
 	<name>exp-api-accounts</name>
 
 	<properties>
-		<wasabi-commons.version>1.0.0</wasabi-commons.version>
+		<wasabi-commons.version>1.0.1</wasabi-commons.version>
 		<!--RAML-->
 		<raml.api.version>1.0.3</raml.api.version>
 	</properties>
