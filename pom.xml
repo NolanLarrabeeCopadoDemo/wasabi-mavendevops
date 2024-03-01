@@ -102,12 +102,12 @@
 			<version>${mule-secure-configuration-property-module.version}</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
+	<!--	<dependency>
 			<groupId>com.mulesoft.connectors</groupId>
 			<artifactId>anypoint-mq-connector</artifactId>
 			<version>${anypoint-mq-connector.version}</version>
 			<classifier>mule-plugin</classifier>
-		</dependency>
+		</dependency> -->
 		<!-- Mule Custom Modules. -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
