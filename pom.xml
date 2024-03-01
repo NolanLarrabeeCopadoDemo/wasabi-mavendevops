@@ -22,6 +22,26 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>3.4.2</version>
+				<extensions>true</extensions>
+				<configuration>
+                    			<cloudHubDeployment>
+                     				<uri>https://anypoint.mulesoft.com</uri>
+                      				<muleVersion>${runtime_version}</muleVersion>
+                      				<connectedAppClientId>${clientid}</connectedAppClientId>
+                      				<connectedAppClientSecret>${clientsecret}</connectedAppClientSecret>
+                     				<connectedAppGrantType>client_credentials</connectedAppGrantType>
+                      				<applicationName>${appname}</applicationName>
+                      				<environment>${environment}</environment>
+                      				<workers>${workerCount}</workers>
+                      				<workerType>${workerType}</workerType>
+                      				<objectStoreV2>true</objectStoreV2>
+                    			</cloudHubDeployment>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
 				<artifactId>munit-maven-plugin</artifactId>
 				<executions>
